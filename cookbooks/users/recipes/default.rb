@@ -28,11 +28,10 @@ users.each do |user|
     gid user[:gid]
     home home_dir
     shell user[:shell] || "/bin/bash"
-    password user[:password]
     supports user[:manage_home] || :manage_home => true
   end
 
-  if users[:manage_home]
+  if user[:manage_home]
     directory "#{home_dir}" do
       owner user[:id]
       group user[:gid]
