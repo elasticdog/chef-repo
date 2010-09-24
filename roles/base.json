@@ -8,6 +8,7 @@
     },
     "chef_type": "role",
     "run_list": [
-
+      "recipe[shells::default]",
+      "recipe[users::default]"
     ]
   }
