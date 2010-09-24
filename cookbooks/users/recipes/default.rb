@@ -28,7 +28,7 @@ users.each do |user|
     gid user[:gid]
     home home_dir
     shell user[:shell] || "/bin/bash"
-    supports user[:manage_home] || :manage_home => true
+    supports :manage_home => user[:manage_home] || true
   end
 
   if user[:manage_home]
