@@ -43,5 +43,13 @@ users.each do |user|
       group user[:gid]
       mode 0700
     end
+
+    template "#{home_dir}/.ssh/authorized_keys" do
+      source "authorized_keys.erb"
+      owner user[:id]
+      group user[:gid]
+      mode 0600
+      variables :ssh_keys => user[:ssh_keys]
+    end
   end
 end
