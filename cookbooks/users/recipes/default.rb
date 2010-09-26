@@ -17,21 +17,19 @@
 # limitations under the License.
 #
 
-users = search(:users)
-
-users.each do |user|
+search(:users).each do |user|
   home_dir = user[:home] || "/home/#{user[:id]}"
   user user[:id] do
-    action [:create, :manage]
     comment user[:comment]
     uid user[:uid]
     gid user[:gid]
     home home_dir
     shell user[:shell] || "/bin/bash"
-    supports :manage_home => user[:manage_home] || true
+    supports :manage_home => false
+    action [:create, :manage]
   end
 
-  if user[:manage_home]
+  if user[:manage_files]
     directory "#{home_dir}" do
       owner user[:id]
       group user[:gid]
@@ -51,5 +49,13 @@ users.each do |user|
       mode 0600
       variables :ssh_keys => user[:ssh_keys]
     end
+  end
+end
+
+search(:groups).each do |group|
+  group group[:id] do
+    gid group[:gid]
+    members group[:members]
+    action [:create, :modify, :manage]
   end
 end
