@@ -9,6 +9,7 @@
     "chef_type": "role",
     "run_list": [
       "recipe[shells::default]",
+      "recipe[sudo::default]",
       "recipe[users::default]"
     ]
   }
