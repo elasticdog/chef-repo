@@ -9,6 +9,7 @@
     "chef_type": "role",
     "run_list": [
       "recipe[git::default]",
+      "recipe[ntp::default]",
       "recipe[shells::default]",
       "recipe[ssh::server]",
       "recipe[sudo::default]",
