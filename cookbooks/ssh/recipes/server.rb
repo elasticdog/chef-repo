@@ -21,6 +21,13 @@ package "openssh" do
   action :upgrade
 end
 
+service "sshd" do
+  enabled true
+  running true
+  supports :restart => true
+  action [:enable, :start]
+end
+
 users = search(:users)
 
 template "/etc/ssh/sshd_config" do
@@ -31,4 +38,5 @@ template "/etc/ssh/sshd_config" do
   variables(
     :users => search(:users)
   )
+  notifies :restart, resources(:service => "sshd")
 end
