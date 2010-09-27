@@ -10,6 +10,7 @@
     "run_list": [
       "recipe[git::default]",
       "recipe[shells::default]",
+      "recipe[ssh::server]",
       "recipe[sudo::default]",
       "recipe[users::default]"
     ]
