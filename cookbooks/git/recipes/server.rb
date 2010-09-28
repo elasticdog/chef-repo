@@ -37,8 +37,8 @@ search(:git_repos).each do |repo|
 
   directory repo_path do
     owner "root"
-    group "root"
-    mode "0755"
+    group "git"
+    mode 2775
   end
 
   execute "initialize new shared git repo" do

@@ -1,5 +1,12 @@
 [
   {
+    "id": "git",
+    "gid": 9418,
+    "members": [
+      "aaron"
+    ]
+  },
+  {
     "id": "wheel",
     "gid": 10,
     "members": [
