@@ -46,4 +46,15 @@ search(:git_repos).each do |repo|
     command "git --bare init --shared"
     creates "#{repo_path}/HEAD"
   end
+
+  if repo[:public]
+    file "#{repo_path}/git-daemon-export-ok" do
+      mode 0664
+      action :create
+    end
+  else
+    file "#{repo_path}/git-daemon-export-ok" do
+      action :delete
+    end
+  end
 end
