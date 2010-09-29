@@ -28,8 +28,6 @@ service "sshd" do
   action [:enable, :start]
 end
 
-users = search(:users)
-
 template "/etc/ssh/sshd_config" do
   source "sshd_config.erb"
   owner "root"
