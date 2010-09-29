@@ -1,14 +1,17 @@
 [
   {
     "id": "elasticdog-com",
+    "description": "jekyll-formatted source of elasticdog.com",
     "public": true
   },
   {
     "id": "dotfiles",
+    "description": "home directory configuration files",
     "public": true
   },
   {
     "id": "factor",
+    "description": "factor programming language",
     "public": true
   }
 ]

@@ -47,6 +47,12 @@ search(:git_repos).each do |repo|
     creates "#{repo_path}/HEAD"
   end
 
+  if repo[:description]
+    file "#{repo_path}/description" do
+      content repo[:description]
+    end
+  end
+
   if repo[:public]
     file "#{repo_path}/git-daemon-export-ok" do
       mode 0664
