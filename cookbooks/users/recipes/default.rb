@@ -17,6 +17,8 @@
 # limitations under the License.
 #
 
+include_recipe "shells"
+
 search(:users).each do |user|
   home_dir = user[:home] || "/home/#{user[:id]}"
   user user[:id] do
