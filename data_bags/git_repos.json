@@ -1,5 +1,10 @@
 [
   {
+    "id": "chef-repo",
+    "description": "personal chef repo integrated with the opscode platform",
+    "public": true
+  },
+  {
     "id": "elasticdog-com",
     "description": "jekyll-formatted source of elasticdog.com",
     "public": true
