@@ -49,7 +49,7 @@ search(:git_repos).each do |repo|
 
   if repo[:description]
     file "#{repo_path}/description" do
-      content repo[:description]
+      content "#{repo[:description]}\n"
     end
   end
 
