@@ -22,7 +22,7 @@ include_recipe "git"
 directory node[:git][:repo_root] do
   owner "root"
   group "root"
-  mode 0755
+  mode "0755"
 end
 
 service "git-daemon" do
@@ -38,7 +38,7 @@ search(:git_repos).each do |repo|
   directory repo_path do
     owner "root"
     group "git"
-    mode 2775
+    mode "2775"
   end
 
   execute "initialize new shared git repo" do
@@ -55,7 +55,7 @@ search(:git_repos).each do |repo|
 
   magic_file = "#{repo_path}/git-daemon-export-ok"
   if repo[:public]
-    file magic_file do mode 0664 end
+    file magic_file do mode "0664" end
   else
     file magic_file do action :delete end
   end

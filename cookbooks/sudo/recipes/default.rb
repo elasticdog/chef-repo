@@ -25,7 +25,7 @@ template "/etc/sudoers" do
   source "sudoers.erb"
   owner "root"
   group "root"
-  mode 0440
+  mode "0440"
   variables(
     :sudoers_groups => node[:authorization][:sudo][:groups],
     :sudoers_users => node[:authorization][:sudo][:users]

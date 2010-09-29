@@ -32,6 +32,6 @@ template "/etc/ntp.conf" do
   source "ntp.conf.erb"
   owner "root"
   group "root"
-  mode 0644
+  mode "0644"
   notifies :restart, resources(:service => "ntpd")
 end
