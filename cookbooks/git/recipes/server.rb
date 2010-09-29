@@ -42,7 +42,7 @@ search(:git_repos).each do |repo|
   end
 
   execute "initialize new shared git repo" do
-    cwd "#{repo_path}"
+    cwd repo_path
     command "git --bare init --shared"
     creates "#{repo_path}/HEAD"
   end
@@ -53,14 +53,10 @@ search(:git_repos).each do |repo|
     end
   end
 
+  magic_file = "#{repo_path}/git-daemon-export-ok"
   if repo[:public]
-    file "#{repo_path}/git-daemon-export-ok" do
-      mode 0664
-      action :create
-    end
+    file magic_file do mode 0664 end
   else
-    file "#{repo_path}/git-daemon-export-ok" do
-      action :delete
-    end
+    file magic_file do action :delete end
   end
 end
