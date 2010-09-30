@@ -13,6 +13,7 @@
       "recipe[shells::default]",
       "recipe[ssh::server]",
       "recipe[sudo::default]",
-      "recipe[users::default]"
+      "recipe[users::default]",
+      "recipe[utilities::default]"
     ]
   }
