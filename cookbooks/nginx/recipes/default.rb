@@ -23,8 +23,8 @@ end
 
 directory node[:nginx][:web_root] do
   owner "root"
-  group "root"
-  mode "0755"
+  group "http"
+  mode "0775"
 end
 
 service "nginx" do
