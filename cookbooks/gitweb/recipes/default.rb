@@ -19,6 +19,7 @@
 
 include_recipe "fcgiwrap"
 include_recipe "git::server"
+include_recipe "nginx"
 
 cookbook_file "/etc/gitweb.conf" do
   owner "root"

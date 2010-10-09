@@ -5,4 +5,5 @@ description      "Installs/Configures gitweb"
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.rdoc'))
 depends          "fcgiwrap"
 depends          "git"
+depends          "nginx"
 version          "0.0.1"
