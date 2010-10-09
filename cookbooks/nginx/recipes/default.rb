@@ -21,15 +21,22 @@ package "nginx" do
   action :install
 end
 
+service "nginx" do
+  enabled true
+  running true
+  supports :restart => true, :reload => true
+  action [:enable, :start]
+end
+
 directory node[:nginx][:web_root] do
   owner "root"
   group "http"
   mode "0775"
 end
 
-service "nginx" do
-  enabled true
-  running true
-  supports :restart => true, :reload => true
-  action [:enable, :start]
+cookbook_file node[:nginx][:config_path] do
+  owner "root"
+  group "root"
+  mode "0644"
+  notifies :restart, resources(:service => "nginx")
 end
