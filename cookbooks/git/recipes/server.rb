@@ -49,6 +49,9 @@ search(:git_repos).each do |repo|
 
   template "#{repo_path}/config" do
     source "config"
+    owner "root"
+    group "git"
+    mode "0664"
     variables(
       :repo_name => repo[:id]
     )
