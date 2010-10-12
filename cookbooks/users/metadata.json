@@ -1,6 +1,6 @@
 {
     "name": "users",
-    "description": "Installs/Configures users",
+    "description": "Installs users and groups",
     "long_description": "= DESCRIPTION:\n\n= REQUIREMENTS:\n\n= ATTRIBUTES:\n\n= USAGE:\n\n",
     "maintainer": "Aaron Bull Schaefer",
     "maintainer_email": "aaron@elasticdog.com",
@@ -8,6 +8,9 @@
     "platforms": {
     },
     "dependencies": {
+      "shells": [
+
+      ]
     },
     "recommendations": {
     },
