@@ -1,0 +1,10 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = true
+	sharedrepository = 1
+[receive]
+	denyNonFastforwards = true
+[gitweb]
+	owner = aaron@elasticdog.com
+	url = git://projects.elasticdog.com/<% @repo_name -%>.git

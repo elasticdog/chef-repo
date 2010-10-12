@@ -47,6 +47,13 @@ search(:git_repos).each do |repo|
     creates "#{repo_path}/HEAD"
   end
 
+  template "#{repo_path}/config" do
+    source "config"
+    variables(
+      :repo_name => repo[:id]
+    )
+  end
+
   if repo[:description]
     file "#{repo_path}/description" do
       content "#{repo[:description]}\n"
