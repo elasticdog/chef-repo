@@ -7,4 +7,4 @@
 	denyNonFastforwards = true
 [gitweb]
 	owner = aaron@elasticdog.com
-	url = git://projects.elasticdog.com/<% @repo_name -%>.git
+	url = git://projects.elasticdog.com/<%= @repo_name %>.git
