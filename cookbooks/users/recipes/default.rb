@@ -49,7 +49,9 @@ search(:users).each do |user|
       owner user[:id]
       group user[:gid]
       mode "0600"
-      variables :ssh_keys => user[:ssh_keys]
+      variables(
+        :ssh_keys => user[:ssh_keys]
+      )
     end
   end
 end
