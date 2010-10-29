@@ -5,18 +5,28 @@
     "public": true
   },
   {
-    "id": "elasticdog-com",
-    "description": "jekyll-formatted source of elasticdog.com",
+    "id": "dotfiles",
+    "description": "home directory configuration files",
     "public": true
   },
   {
-    "id": "dotfiles",
-    "description": "home directory configuration files",
+    "id": "elasticdog-com",
+    "description": "jekyll-formatted source of elasticdog.com",
     "public": true
   },
   {
     "id": "factor",
     "description": "factor programming language",
     "public": true
+  },
+  {
+    "id": "pygments-factor",
+    "description": "pygments's lexer for factor language syntax highlighting",
+    "public": true
+  },
+  {
+    "id": "weechat-conf",
+    "description": "weechat configuration files and plugins",
+    "public": false
   }
 ]
